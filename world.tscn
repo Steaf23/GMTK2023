@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3odeyef838bk"]
+
+[ext_resource type="Script" path="res://Board.gd" id="1_bvqqe"]
+[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://actor.tscn" id="2_uep8r"]
+[ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="3_tspja"]
+[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_y58vb"]
+
+[sub_resource type="TileSet" id="TileSet_ppgbf"]
+tile_size = Vector2i(64, 64)
+
+[node name="World" type="Node2D"]
+
+[node name="Board" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ppgbf")
+cell_quadrant_size = 64
+format = 2
+script = ExtResource("1_bvqqe")
+
+[node name="Actors" type="Node2D" parent="Board"]
+
+[node name="Actor" parent="Board/Actors" instance=ExtResource("2_uep8r")]
+mask = ExtResource("3_tspja")
+
+[node name="Actor2" parent="Board/Actors" instance=ExtResource("2_uep8r")]
+position = Vector2(128, 0)
+mask = ExtResource("3_y58vb")
