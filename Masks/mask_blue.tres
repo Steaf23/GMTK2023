@@ -1,17 +1,10 @@
-[gd_resource type="Resource" script_class="Mask" load_steps=4 format=3 uid="uid://c7gqmpw1irtio"]
+[gd_resource type="Resource" script_class="Mask" load_steps=3 format=3 uid="uid://c7gqmpw1irtio"]
 
 [ext_resource type="Script" path="res://mask.gd" id="1_mtck4"]
-
-[sub_resource type="Gradient" id="Gradient_b42ad"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_yeliq"]
-gradient = SubResource("Gradient_b42ad")
-width = 32
-height = 32
+[ext_resource type="Texture2D" uid="uid://brobnwpko6krx" path="res://Assets/Blue Mask.png" id="2_68cky"]
 
 [resource]
 script = ExtResource("1_mtck4")
-texture = SubResource("GradientTexture2D_yeliq")
-color = Color(0.0470588, 0.282353, 1, 1)
+texture = ExtResource("2_68cky")
+color = Color(0.355469, 0.429688, 0.878906, 1)
+next_pos = Vector2i(1, 0)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Mask" load_steps=3 format=3 uid="uid://d4hu58wo5ikx3"]
+
+[ext_resource type="Script" path="res://mask.gd" id="1_l3viv"]
+[ext_resource type="Texture2D" uid="uid://ciis6luondcc4" path="res://Assets/Yellow Mask.png" id="2_485i0"]
+
+[resource]
+script = ExtResource("1_l3viv")
+texture = ExtResource("2_485i0")
+color = Color(0.84375, 0.8125, 0.117188, 1)
+next_pos = Vector2i(0, 0)
