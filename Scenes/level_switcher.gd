@@ -3,12 +3,14 @@ extends Node
 @export var level_pattern = "res://Levels/level_%d.tscn"
 
 # Change this when selecting a level from the menu 
-@onready var first_level: int = 0
+@onready var first_level: int = -1
+@onready var gui: GUI = $GUI
 
 var current_level: int
 
 
 func _ready() -> void:
+	gui.play_button.disabled = false
 	switch(first_level)
 	
 
@@ -21,13 +23,21 @@ func switch(new_level: int) -> void:
 	
 	for c in $Level.get_children():
 		c.queue_free()
+	
+	var scn: Level
+	if current_level == -1:
+		scn = load("res://Levels/first_level.tscn").instantiate()
+	else:
+		scn = load(level_pattern % new_level).instantiate()
 		
-	var scn: Level = load(level_pattern % new_level).instantiate()
 	$Level.add_child(scn)
 	scn.level_won.connect(_on_level_won.bind(new_level))
+	scn.turn_started.connect(func(): gui.play_button.disabled = true)
+	scn.turn_finished.connect(func(): gui.play_button.disabled = false)
 
 
 func _on_level_won(level: int) -> void:
+	gui.play_button.disabled = false
 	var new_level = level + 1
 	if has_level(new_level):
 		switch(new_level)

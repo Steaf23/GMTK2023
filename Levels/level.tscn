@@ -636,6 +636,7 @@ script = ExtResource("2_g5uov")
 [node name="ReferenceRect" type="ReferenceRect" parent="."]
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 border_width = 4.0
 
 [node name="Grid" type="TileMap" parent="."]

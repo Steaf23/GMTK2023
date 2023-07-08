@@ -1,3 +1,4 @@
+class_name GUI
 extends CanvasLayer
 
 signal reset_pressed()
@@ -5,6 +6,7 @@ signal menu_pressed()
 signal play_pressed()
 
 @onready var pause_menu = $PauseMenu
+@onready var play_button: Button = $MarginContainer/Play
 
 
 func _input(event: InputEvent) -> void:
@@ -42,3 +44,7 @@ func _on_home_pressed() -> void:
 
 func _on_play_pressed() -> void:
 	play_pressed.emit()
+
+
+func _on_resume_pressed() -> void:
+	unpause()
