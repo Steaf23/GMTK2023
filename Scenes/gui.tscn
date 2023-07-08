@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bajte0ibhll8v"]
 
 [ext_resource type="Script" path="res://Scenes/gui.gd" id="1_hntvv"]
-[ext_resource type="Texture2D" uid="uid://sccxoktjhgy7" path="res://Assets/Art/Pause Button.png" id="2_86vyh"]
+[ext_resource type="Texture2D" uid="uid://bu5awf5382nvj" path="res://Assets/Art/Pause Button.png" id="2_86vyh"]
 [ext_resource type="PackedScene" uid="uid://ux1lgkuk6mvl" path="res://SoundManager/volume_settings.tscn" id="2_qt66y"]
-[ext_resource type="Texture2D" uid="uid://bao3dig6qrf15" path="res://Assets/Art/Reset.png" id="3_ers5a"]
-[ext_resource type="Texture2D" uid="uid://bk4828vccc426" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
-[ext_resource type="Theme" uid="uid://440fxefn6h2" path="res://Assets/Art/Theme.tres" id="6_viggc"]
+[ext_resource type="Texture2D" uid="uid://cynhrt22abccs" path="res://Assets/Art/Reset.png" id="3_ers5a"]
+[ext_resource type="Texture2D" uid="uid://dc7syg6kp4x0o" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
+[ext_resource type="Theme" path="res://Assets/Art/Theme.tres" id="6_viggc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopl2"]
 bg_color = Color(0, 0, 0, 0.780392)
@@ -21,7 +21,7 @@ font_size = 32
 process_mode = 3
 script = ExtResource("1_hntvv")
 
-[node name="Button" type="Button" parent="."]
+[node name="Pause" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -32,12 +32,12 @@ focus_mode = 0
 icon = ExtResource("2_86vyh")
 
 [node name="PauseMenu" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("6_viggc")
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
@@ -52,27 +52,38 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
-text = "Paused"
+text = "PAUSED"
 label_settings = SubResource("LabelSettings_0yatn")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
 
 [node name="Reset" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
 icon = ExtResource("3_ers5a")
+flat = true
 
 [node name="Home" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
 icon = ExtResource("4_dswpd")
+flat = true
 
-[node name="VolumeSettings" parent="PauseMenu/VBoxContainer" instance=ExtResource("2_qt66y")]
+[node name="HBoxContainer2" type="MarginContainer" parent="PauseMenu/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("6_viggc")
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="VolumeSettings" parent="PauseMenu/VBoxContainer/HBoxContainer2" instance=ExtResource("2_qt66y")]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/HBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

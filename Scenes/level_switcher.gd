@@ -13,7 +13,7 @@ func _ready() -> void:
 	
 
 func has_level(level: int) -> bool:
-	return FileAccess.file_exists(level_pattern % level)
+	return ResourceLoader.exists(level_pattern % level)
 
 
 func switch(new_level: int) -> void:
@@ -41,3 +41,12 @@ func _on_gui_menu_pressed() -> void:
 
 func _on_gui_reset_pressed() -> void:
 	switch(current_level)
+
+
+func _on_gui_play_pressed() -> void:
+	var level_node: Level = $Level.get_child(0)
+	if level_node == null:
+		return
+	
+	level_node.play_turn()
+	

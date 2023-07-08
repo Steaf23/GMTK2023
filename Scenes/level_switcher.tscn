@@ -12,4 +12,5 @@ script = ExtResource("1_42xay")
 layer = 10
 
 [connection signal="menu_pressed" from="GUI" to="." method="_on_gui_menu_pressed"]
+[connection signal="play_pressed" from="GUI" to="." method="_on_gui_play_pressed"]
 [connection signal="reset_pressed" from="GUI" to="." method="_on_gui_reset_pressed"]
