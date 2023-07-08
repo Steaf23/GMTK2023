@@ -5,6 +5,7 @@
 [node name="VolumeSlider" type="HBoxContainer"]
 offset_right = 13.0
 offset_bottom = 23.0
+size_flags_horizontal = 3
 script = ExtResource("1_ci3fq")
 
 [node name="Label" type="Label" parent="."]
