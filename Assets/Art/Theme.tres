@@ -1,6 +1,14 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://440fxefn6h2"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://440fxefn6h2"]
 
 [ext_resource type="FontFile" uid="uid://df36fv5ivuth4" path="res://Assets/Thor.ttf" id="1_fg78p"]
+[ext_resource type="StyleBox" uid="uid://dyh1s46o1cp7b" path="res://Assets/Art/Button_Hovered.tres" id="1_hr7m3"]
+[ext_resource type="StyleBox" uid="uid://ctid32yrdbot" path="res://Assets/Art/Button.tres" id="1_smqq3"]
+[ext_resource type="StyleBox" uid="uid://dw0dwkwl3vl54" path="res://Assets/Art/Button_Pressed.tres" id="2_6ftxs"]
 
 [resource]
 default_font = ExtResource("1_fg78p")
+Button/styles/disabled = ExtResource("2_6ftxs")
+Button/styles/focus = ExtResource("2_6ftxs")
+Button/styles/hover = ExtResource("1_hr7m3")
+Button/styles/normal = ExtResource("1_smqq3")
+Button/styles/pressed = ExtResource("2_6ftxs")
