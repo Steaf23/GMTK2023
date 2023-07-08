@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://440fxefn6h2"]
+
+[ext_resource type="FontFile" uid="uid://df36fv5ivuth4" path="res://Assets/Thor.ttf" id="1_fg78p"]
+
+[resource]
+default_font = ExtResource("1_fg78p")

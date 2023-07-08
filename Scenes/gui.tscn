@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bajte0ibhll8v"]
+[gd_scene load_steps=9 format=3 uid="uid://bajte0ibhll8v"]
 
 [ext_resource type="Script" path="res://Scenes/gui.gd" id="1_hntvv"]
+[ext_resource type="Texture2D" uid="uid://sccxoktjhgy7" path="res://Assets/Art/Pause Button.png" id="2_86vyh"]
 [ext_resource type="PackedScene" uid="uid://ux1lgkuk6mvl" path="res://SoundManager/volume_settings.tscn" id="2_qt66y"]
+[ext_resource type="Texture2D" uid="uid://bao3dig6qrf15" path="res://Assets/Art/Reset.png" id="3_ers5a"]
+[ext_resource type="Texture2D" uid="uid://bk4828vccc426" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
+[ext_resource type="Theme" uid="uid://440fxefn6h2" path="res://Assets/Art/Theme.tres" id="6_viggc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopl2"]
 bg_color = Color(0, 0, 0, 0.780392)
@@ -25,8 +29,7 @@ offset_left = -8.0
 offset_bottom = 8.0
 grow_horizontal = 0
 focus_mode = 0
-text = "Pause
-"
+icon = ExtResource("2_86vyh")
 
 [node name="PauseMenu" type="MarginContainer" parent="."]
 visible = false
@@ -59,15 +62,16 @@ layout_mode = 2
 [node name="Reset" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "reset"
+icon = ExtResource("3_ers5a")
 
 [node name="Home" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 6
-text = "menu"
+icon = ExtResource("4_dswpd")
 
 [node name="VolumeSettings" parent="PauseMenu/VBoxContainer" instance=ExtResource("2_qt66y")]
 layout_mode = 2
+theme = ExtResource("6_viggc")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/HBoxContainer/Reset" to="." method="_on_reset_pressed"]
