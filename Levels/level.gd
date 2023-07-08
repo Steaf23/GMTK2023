@@ -2,6 +2,10 @@ class_name Level
 extends TileMap
 
 signal level_won()
+signal turn_started()
+signal turn_finished()
+
+@export var move_with_key: bool = true
 
 @onready var actors = $Actors
 @onready var targets = $Targets
@@ -9,24 +13,30 @@ signal level_won()
 var selected_actor: Actor = null
 
 var turn: int = 0
+var turn_ended = true
 
 
 func _ready() -> void:
 	for t in get_used_cells_by_custom_data(0, "collision", 1):
-		if t.x % 2 == t.y % 2:
+		if t.x % 2 != t.y % 2:
 			$Grid.set_cell(0, t, 0, Vector2i())
 	
 	for child in actors.get_children():
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
-		
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("turn"):
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("turn") and move_with_key:
 		play_turn()
 
 
 func play_turn() -> void:
+	if !turn_ended:
+		return
+	
+	turn_started.emit()
+	turn_ended = false
 	for child in actors.get_children():
 		if child is Actor:
 			var target_cell = child.current_cell + child.get_mask_target_pos()
@@ -35,10 +45,16 @@ func play_turn() -> void:
 	
 	turn += 1
 	check_win()
+	
+	await get_tree().create_timer(0.3).timeout
+	turn_finished.emit()
+	turn_ended = true
 
 
 func _on_actor_clicked(actor: Actor) -> void:
-	if selected_actor == null || selected_actor == actor:
+	if selected_actor == actor:
+		selected_actor = null
+	elif selected_actor == null:
 		selected_actor = actor
 	else:
 		switch_masks(actor, selected_actor)

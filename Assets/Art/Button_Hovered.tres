@@ -1,6 +1,12 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dyh1s46o1cp7b"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://1fc060xvefde"]
 
-[ext_resource type="Texture2D" uid="uid://ybu2msonsy1m" path="res://Assets/Art/Button Hovered.png" id="1_gc3h5"]
+[ext_resource type="Texture2D" uid="uid://c5c22qlg8wiai" path="res://Assets/Art/Button Hovered.png" id="1_gc3h5"]
 
 [resource]
 texture = ExtResource("1_gc3h5")
+texture_margin_left = 5.0
+texture_margin_top = 9.0
+texture_margin_right = 5.0
+texture_margin_bottom = 6.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
