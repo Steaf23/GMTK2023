@@ -11,6 +11,10 @@ signal play_pressed()
 @onready var reset_button: Button = $PauseMenu/VBoxContainer/HBoxContainer/Reset
 
 
+func _ready() -> void:
+	unpause()
+	
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):
 		_on_pause_pressed()
