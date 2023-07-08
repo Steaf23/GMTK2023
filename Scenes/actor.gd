@@ -46,12 +46,20 @@ func get_mask_target_pos() -> Vector2i:
 
 func throw_mask(target_position: Vector2i) -> void:
 	var mask_tween_pos = create_tween()
-	var tweener = mask_tween_pos.tween_property(mask_sprite, "global_position", Vector2(target_position) + MASK_OFFSET, 1.0)
+	var tweener = mask_tween_pos.tween_property(mask_sprite, ^"global_position", Vector2(target_position) + MASK_OFFSET, 1.0)
 	tweener.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	
 	var mask_tween_rot = create_tween()
-	var tweener2 = mask_tween_rot.tween_property(mask_sprite, "rotation_degrees", 360, 1.0)
+	var tweener2 = mask_tween_rot.tween_property(mask_sprite, ^"rotation_degrees", 360, 1.0)
 	tweener2.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT).from(0)
+	
+	var mask_tween_scale = create_tween()
+	var tweener3 = mask_tween_scale.tween_property(mask_sprite, ^"scale", Vector2(1.5, 1.5), 0.6)
+	tweener3.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
+	var tweener4 = mask_tween_scale.tween_property(mask_sprite, ^"scale", Vector2(0.75, 0.75), 0.6)
+	tweener4.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+	var tweener5 = mask_tween_scale.tween_property(mask_sprite, ^"scale", Vector2(1.0, 1.0), 0.2)
+	tweener5.set_trans(Tween.TRANS_SPRING)
 	
 	mask_tween_pos.finished.connect(_on_mask_thrown)
 
@@ -70,7 +78,7 @@ func move() -> void:
 	var distance = global_position.distance_to(target)
 	current_tween = create_tween()
 	current_tween.tween_property(self, ^"global_position", Vector2(target), 0.3)
-	
+
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("select"):

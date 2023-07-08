@@ -15,3 +15,7 @@ mask = ExtResource("4_q50jj")
 [node name="Actor" parent="Actors" index="0" instance=ExtResource("3_0pfuq")]
 position = Vector2(128, 160)
 mask = ExtResource("4_q50jj")
+
+[node name="Tutorial" type="Node2D" parent="." index="4"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial" index="0"]

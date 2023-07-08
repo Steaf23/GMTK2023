@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcmrga8nmclxy"]
 
-[ext_resource type="Theme" uid="uid://440fxefn6h2" path="res://Assets/Art/Theme.tres" id="1_acdmr"]
+[ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="1_acdmr"]
 
 [node name="Level Select" type="Control"]
 layout_mode = 3
@@ -34,28 +34,25 @@ size_flags_vertical = 4
 
 [node name="Level 0" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_acdmr")
+focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Level 0	"
 
 [node name="Level 1" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("1_acdmr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Level 1"
+theme_override_font_sizes/font_size = 32
+text = "Le"
 
 [node name="Level 2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("1_acdmr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Level 2"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_acdmr")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Quit"

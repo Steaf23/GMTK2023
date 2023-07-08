@@ -633,6 +633,11 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_g5uov")
 
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+border_width = 4.0
+
 [node name="Grid" type="TileMap" parent="."]
 modulate = Color(1, 1, 1, 0.435294)
 tile_set = SubResource("TileSet_k8fyi")
@@ -642,8 +647,3 @@ format = 2
 [node name="Targets" type="Node2D" parent="."]
 
 [node name="Actors" type="Node2D" parent="."]
-
-[node name="ReferenceRect" type="ReferenceRect" parent="."]
-offset_right = 640.0
-offset_bottom = 360.0
-border_width = 4.0

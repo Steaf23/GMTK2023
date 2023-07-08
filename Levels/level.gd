@@ -13,7 +13,7 @@ var turn: int = 0
 
 func _ready() -> void:
 	for t in get_used_cells_by_custom_data(0, "collision", 1):
-		if t.x % 2 == t.y % 2:
+		if t.x % 2 != t.y % 2:
 			$Grid.set_cell(0, t, 0, Vector2i())
 	
 	for child in actors.get_children():
@@ -35,7 +35,6 @@ func play_turn() -> void:
 	
 	turn += 1
 	check_win()
-
 
 func _on_actor_clicked(actor: Actor) -> void:
 	if selected_actor == null || selected_actor == actor:

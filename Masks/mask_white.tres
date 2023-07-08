@@ -7,4 +7,4 @@
 script = ExtResource("1_clvbb")
 texture = ExtResource("2_7y8ta")
 color = Color(0.886719, 0.886719, 0.886719, 1)
-next_pos = Vector2i(2, 1)
+next_pos = Vector2i(-1, -1)

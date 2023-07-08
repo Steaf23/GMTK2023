@@ -1,6 +1,10 @@
-[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dw0dwkwl3vl54"]
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://d2xm5ba81jwd0"]
 
-[ext_resource type="Texture2D" uid="uid://bv0edc6sak758" path="res://Assets/Art/Button Pressed.png" id="1_03w0w"]
+[ext_resource type="Texture2D" uid="uid://cjqo6ods3jn76" path="res://Assets/Art/Button Pressed.png" id="1_03w0w"]
 
 [resource]
 texture = ExtResource("1_03w0w")
+texture_margin_left = 5.0
+texture_margin_top = 9.0
+texture_margin_right = 5.0
+texture_margin_bottom = 6.0
