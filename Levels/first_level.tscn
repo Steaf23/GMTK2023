@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://clndxflipbpp"]
+[gd_scene load_steps=9 format=3 uid="uid://clndxflipbpp"]
 
 [ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_v0igt"]
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_07je6"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_7qp14"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_yrq0p"]
-[ext_resource type="Texture2D" uid="uid://q51me8pkrak8" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
+[ext_resource type="Texture2D" uid="uid://d0xc7ncsbh0xe" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
+[ext_resource type="Texture2D" uid="uid://cix5gntu2homc" path="res://Assets/Art/Lil Guy.png" id="5_vnhk6"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_03f4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mgnaa"]
@@ -25,6 +26,7 @@ mask = ExtResource("3_7qp14")
 [node name="Tutorial" type="Node2D" parent="." index="4"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial" index="0"]
+texture = ExtResource("5_vnhk6")
 
 [node name="Main" type="CanvasLayer" parent="." index="5"]
 
