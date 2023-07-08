@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://bajte0ibhll8v"]
 
 [ext_resource type="Script" path="res://Scenes/gui.gd" id="1_hntvv"]
-[ext_resource type="Texture2D" uid="uid://bu5awf5382nvj" path="res://Assets/Art/Pause Button.png" id="2_86vyh"]
+[ext_resource type="Texture2D" uid="uid://blbutsk38a14n" path="res://Assets/Art/Gear Icon.png" id="2_5d84w"]
 [ext_resource type="PackedScene" uid="uid://ux1lgkuk6mvl" path="res://SoundManager/volume_settings.tscn" id="2_qt66y"]
-[ext_resource type="Texture2D" uid="uid://d1sobxud1kuy8" path="res://Assets/Art/Play Button.png" id="3_7ftxc"]
-[ext_resource type="Texture2D" uid="uid://cynhrt22abccs" path="res://Assets/Art/Reset.png" id="3_ers5a"]
-[ext_resource type="Texture2D" uid="uid://dc7syg6kp4x0o" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
+[ext_resource type="Texture2D" uid="uid://d0eff0p0g0dm6" path="res://Assets/Art/Play Button.png" id="3_7ftxc"]
+[ext_resource type="Texture2D" uid="uid://bao3dig6qrf15" path="res://Assets/Art/Reset.png" id="3_ers5a"]
+[ext_resource type="Texture2D" uid="uid://bk4828vccc426" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_viggc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopl2"]
@@ -44,7 +44,7 @@ theme_override_constants/margin_bottom = 20
 [node name="Pause" type="Button" parent="MarginContainer2"]
 layout_mode = 2
 focus_mode = 0
-icon = ExtResource("2_86vyh")
+icon = ExtResource("2_5d84w")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 7
@@ -71,6 +71,10 @@ icon = ExtResource("3_7ftxc")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 5.0
+offset_right = -7.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_viggc")

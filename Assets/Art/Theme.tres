@@ -1,13 +1,14 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://dakh6hysbokff"]
 
-[ext_resource type="FontFile" uid="uid://car7sm0taoeu0" path="res://Assets/Thor.ttf" id="1_fg78p"]
+[ext_resource type="FontFile" uid="uid://df36fv5ivuth4" path="res://Assets/Thor.ttf" id="1_fg78p"]
 [ext_resource type="StyleBox" uid="uid://1fc060xvefde" path="res://Assets/Art/Button_Hovered.tres" id="1_hr7m3"]
-[ext_resource type="StyleBox" path="res://Assets/Art/Button.tres" id="1_smqq3"]
-[ext_resource type="StyleBox" path="res://Assets/Art/Button_Pressed.tres" id="2_6ftxs"]
+[ext_resource type="StyleBox" uid="uid://bgkljnnosnc3" path="res://Assets/Art/Button.tres" id="1_smqq3"]
+[ext_resource type="StyleBox" uid="uid://d2xm5ba81jwd0" path="res://Assets/Art/Button_Pressed.tres" id="2_6ftxs"]
 
 [resource]
 default_font = ExtResource("1_fg78p")
 default_font_size = 16
+Button/colors/font_hover_color = Color(0.462745, 0.462745, 0.462745, 1)
 Button/styles/disabled = ExtResource("2_6ftxs")
 Button/styles/focus = ExtResource("2_6ftxs")
 Button/styles/hover = ExtResource("1_hr7m3")
