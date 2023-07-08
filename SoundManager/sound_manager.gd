@@ -22,7 +22,7 @@ func play_music(path: String) -> void:
 		print("Cannot find " + path + "!")
 		return
 		
-	music_player = load(path)
+	music_player.stream = load(path)
 	music_player.play()	
 
 
@@ -41,6 +41,7 @@ func play_sfx(path: String) -> void:
 		_stop_player(_get_oldest_player())
 	
 	var player = AudioStreamPlayer.new()
+	player.bus = &"SFX"
 	player.set_meta("path", path)
 	player.set_meta("id", player_counter)
 	player.stream = load(path)

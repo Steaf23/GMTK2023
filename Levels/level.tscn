@@ -1,13 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://b3odeyef838bk"]
+[gd_scene load_steps=15 format=3 uid="uid://b3odeyef838bk"]
 
-[ext_resource type="Texture2D" uid="uid://ckmism0cec2f3" path="res://Assets/LPC_Ancient_Greece_Architecture.png" id="1_8fwom"]
-[ext_resource type="Script" path="res://Scenes/Board.gd" id="2_to0vy"]
-[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="3_5p7gm"]
-[ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="4_jejc3"]
-[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="5_fqpkb"]
-[ext_resource type="Resource" uid="uid://d4hu58wo5ikx3" path="res://Masks/mask_yellow.tres" id="6_l0ju2"]
-[ext_resource type="Resource" uid="uid://ddgwvr78u14nq" path="res://Masks/mask_white.tres" id="7_uanwk"]
-[ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="8_hp1pm"]
+[ext_resource type="Texture2D" uid="uid://ckmism0cec2f3" path="res://Assets/Art/LPC_Ancient_Greece_Architecture.png" id="1_7143d"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="2_g5uov"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_x8qvj"]
 tile_data = PackedInt32Array(0, 0, 0, 65537, 0, 0)
@@ -49,7 +43,7 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xcxir"]
-texture = ExtResource("1_8fwom")
+texture = ExtResource("1_7143d")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -577,9 +571,7 @@ sources/2 = SubResource("TileSetAtlasSource_xoxdw")
 sources/3 = SubResource("TileSetAtlasSource_xcxir")
 pattern_0 = SubResource("TileMapPattern_x8qvj")
 
-[node name="World" type="Node2D"]
-
-[node name="Board" type="TileMap" parent="."]
+[node name="Level" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ppgbf")
 cell_quadrant_size = 32
@@ -593,32 +585,8 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
-script = ExtResource("2_to0vy")
+script = ExtResource("2_g5uov")
 
-[node name="Actors" type="Node2D" parent="Board"]
+[node name="Targets" type="Node2D" parent="."]
 
-[node name="Actor" parent="Board/Actors" instance=ExtResource("3_5p7gm")]
-position = Vector2(240, 144)
-mask = ExtResource("4_jejc3")
-
-[node name="Actor2" parent="Board/Actors" instance=ExtResource("3_5p7gm")]
-position = Vector2(176, 144)
-mask = ExtResource("5_fqpkb")
-
-[node name="Actor3" parent="Board/Actors" instance=ExtResource("3_5p7gm")]
-position = Vector2(336, 144)
-mask = ExtResource("6_l0ju2")
-
-[node name="Actor4" parent="Board/Actors" instance=ExtResource("3_5p7gm")]
-position = Vector2(272, 208)
-mask = ExtResource("7_uanwk")
-
-[node name="Targets" type="Node2D" parent="Board"]
-
-[node name="Target" parent="Board/Targets" instance=ExtResource("8_hp1pm")]
-position = Vector2(240, 48)
-mask = ExtResource("4_jejc3")
-
-[node name="Target2" parent="Board/Targets" instance=ExtResource("8_hp1pm")]
-position = Vector2(272, 144)
-mask = ExtResource("5_fqpkb")
+[node name="Actors" type="Node2D" parent="."]

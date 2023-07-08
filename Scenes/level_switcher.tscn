@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bm6hkmmauod"]
+
+[ext_resource type="Script" path="res://Scenes/level_switcher.gd" id="1_42xay"]
+[ext_resource type="PackedScene" uid="uid://bajte0ibhll8v" path="res://Scenes/gui.tscn" id="2_i1owt"]
+
+[node name="LevelSwitcher" type="Node"]
+script = ExtResource("1_42xay")
+
+[node name="Level" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource("2_i1owt")]
+layer = 10
+
+[connection signal="menu_pressed" from="GUI" to="." method="_on_gui_menu_pressed"]
+[connection signal="reset_pressed" from="GUI" to="." method="_on_gui_reset_pressed"]
