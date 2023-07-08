@@ -21,7 +21,6 @@ signal mask_move_finished()
 		
 @onready var mask_sprite = $MaskSprite
 @onready var target = $Target
-@onready var sfx = load("res://Assets/Audio/Resources/sfx.tres")
 
 var current_cell: Vector2i
 var current_tween: Tween = null

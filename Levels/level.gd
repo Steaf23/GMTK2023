@@ -83,6 +83,7 @@ func check_win() -> void:
 				all_targets = false
 	
 	if all_targets:
+		SoundManager.play_sfx("res://Assets/Audio/SFX/stage_clear.wav")
 		print("Level finished in {0} turn(s)".format([turn]))
 		level_won.emit()
 
