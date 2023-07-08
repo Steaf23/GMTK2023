@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=10 format=3 uid="uid://43wh5bpvl1ar"]
+
+[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="1_x2wxb"]
+[ext_resource type="AudioStream" uid="uid://d18nfiisrl0wd" path="res://Assets/Audio/SFX/mask1.wav" id="2_4gay4"]
+[ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="3_7jvbh"]
+[ext_resource type="AudioStream" uid="uid://bf587uo2hs4m6" path="res://Assets/Audio/SFX/mask2.wav" id="4_nn72t"]
+[ext_resource type="Resource" uid="uid://ddgwvr78u14nq" path="res://Masks/mask_white.tres" id="5_j3mwy"]
+[ext_resource type="AudioStream" uid="uid://cg1dtio22xfc8" path="res://Assets/Audio/SFX/mask3.wav" id="6_j64y6"]
+[ext_resource type="Resource" uid="uid://d4hu58wo5ikx3" path="res://Masks/mask_yellow.tres" id="7_001nj"]
+[ext_resource type="Script" path="res://Assets/Audio/Resources/sfx.gd" id="7_ro5c5"]
+[ext_resource type="AudioStream" uid="uid://ujx2spq5bbkj" path="res://Assets/Audio/SFX/mask4.wav" id="8_n34ap"]
+
+[resource]
+script = ExtResource("7_ro5c5")
+masks = {
+ExtResource("1_x2wxb"): ExtResource("2_4gay4"),
+ExtResource("3_7jvbh"): ExtResource("4_nn72t"),
+ExtResource("5_j3mwy"): ExtResource("6_j64y6"),
+ExtResource("7_001nj"): ExtResource("8_n34ap")
+}
