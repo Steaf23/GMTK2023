@@ -65,9 +65,3 @@ layout_mode = 2
 
 [node name="First Level" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Levels" instance=ExtResource("3_gmcdo")]
 layout_mode = 2
-text = "Level 0"
-
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Quit"

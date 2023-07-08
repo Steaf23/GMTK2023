@@ -82,7 +82,7 @@ func move() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("select"):
-		get_node("/root/SoundManager").play_sfx(mask.sfx)
+		SoundManager.play_sfx(mask.sfx)
 		clicked.emit()
 
 

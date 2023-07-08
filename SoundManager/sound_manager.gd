@@ -69,7 +69,7 @@ func _get_oldest_player() -> AudioStreamPlayer:
 		return null
 		
 	var oldest_record = 0
-	var oldest_player = sfx_pool.get_children()
+	var oldest_player = sfx_pool.get_children()[0]
 	for player in sfx_pool.get_children():
 		if player.get_meta("id") < oldest_record:
 			oldest_player = player

@@ -1,5 +1,8 @@
 @tool
+class_name LevelSelect
 extends Control
+
+signal level_btn_pressed()
 
 @onready var levels = $MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Levels
 @onready var LEVEL_BTN: PackedScene = preload("res://Level Select/level_button.tscn")
@@ -19,8 +22,6 @@ func _ready() -> void:
 
 	for child in levels.get_children():
 		if child is Button and child.has_meta("level"):
-			child.pressed.connect(_on_button_clicked.bind(child.get_meta("level")))
-			
-
-func _on_button_clicked(level: int) -> void:
-	print(level)
+			child.pressed.connect(func ():
+				level_btn_pressed.emit(child.get_meta("level")))
+	
