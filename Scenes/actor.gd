@@ -1,3 +1,4 @@
+@tool
 class_name Actor
 extends Area2D
 
@@ -10,9 +11,13 @@ signal clicked()
 			await self.ready
 		
 		if new_mask != null:
-			mask_sprite.texture = mask.texture
+			mask_sprite.texture = new_mask.texture
+			target.global_position = global_position + Vector2(new_mask.next_pos * 32)
+			target.modulate = new_mask.color
+			
 		
 @onready var mask_sprite = $MaskSprite
+@onready var target = $Target
 
 var selected = false
 

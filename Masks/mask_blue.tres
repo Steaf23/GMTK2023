@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Mask" load_steps=3 format=3 uid="uid://c7gqmpw1irtio"]
 
-[ext_resource type="Script" path="res://mask.gd" id="1_mtck4"]
+[ext_resource type="Script" path="res://Scenes/mask.gd" id="1_mtck4"]
 [ext_resource type="Texture2D" uid="uid://brobnwpko6krx" path="res://Assets/Blue Mask.png" id="2_68cky"]
 
 [resource]

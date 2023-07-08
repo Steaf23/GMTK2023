@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GMTK2023"
-run/main_scene="res://world.tscn"
+run/main_scene="res://Scenes/world.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.0313726, 0.0313726, 0.0313726, 1)
 boot_splash/image="res://GMTK2023_SPLASH.png"
@@ -25,6 +25,12 @@ buses/default_bus_layout="res://Resources/bus_layout.tres"
 
 KeyActions="*res://InputMapper/KeyActions.gd"
 SoundManager="*res://SoundManager/sound_manager.tscn"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
 
 [input]
 

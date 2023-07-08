@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://66lwrtr6m738"]
+
+[ext_resource type="Script" path="res://Scenes/target.gd" id="1_aiiir"]
+
+[sub_resource type="Gradient" id="Gradient_ts6xm"]
+colors = PackedColorArray(0.0562916, 0.0562916, 0.0562916, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ggng"]
+gradient = SubResource("Gradient_ts6xm")
+width = 28
+height = 28
+fill_from = Vector2(0.512821, 1)
+fill_to = Vector2(0.508547, 0)
+
+[node name="Target" type="Node2D"]
+script = ExtResource("1_aiiir")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_5ggng")

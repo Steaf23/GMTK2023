@@ -72,7 +72,7 @@ func _get_oldest_player() -> AudioStreamPlayer:
 			oldest_player = player
 			oldest_record = player.get_meta("id")
 	
-	return oldest_record
+	return oldest_player
 
 
 func _on_player_finished(player: AudioStreamPlayer) -> void:

@@ -1,6 +1,7 @@
 extends TileMap
 
 @onready var actors = $Actors
+@onready var targets = $Targets
 
 var selected_actor: Actor = null
 
@@ -9,8 +10,6 @@ func _ready() -> void:
 	for child in actors.get_children():
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
-	
-	show_target_tiles()
 
 
 func _input(event: InputEvent) -> void:
@@ -24,17 +23,8 @@ func play_turn() -> void:
 			var target_cell = local_to_map(child.global_position) + child.get_mask_target_pos()
 			if can_move_to_tile(child, target_cell):
 				child.global_position = map_to_local(target_cell)
-			else:
-				"I cannot move!"
-	show_target_tiles()
-
-
-func show_target_tiles() -> void:
-	clear_layer(1)
-	for child in actors.get_children():
-		if child is Actor:
-			var target_cell = local_to_map(child.global_position) + child.get_mask_target_pos()
-			set_cell(1, target_cell, 2, Vector2i())
+	
+	check_win()
 
 
 func _on_actor_clicked(actor: Actor) -> void:
@@ -50,11 +40,28 @@ func switch_masks(actor1: Actor, actor2: Actor) -> void:
 	actor2.mask = tmp
 	
 	selected_actor = null
-	show_target_tiles()
+	check_win()
 
 
-func can_move_to_tile(actor: Actor, tile: Vector2i) -> bool:
-	return get_cell_source_id(0, tile) != 1
-		
+func can_move_to_tile(actor: Actor, cell: Vector2i) -> bool:
+	return get_actor_on_tile(cell) == null && get_cell_tile_data(0, cell).get_custom_data("collision") != 1
 	
 	
+func get_actor_on_tile(cell: Vector2i) -> Actor:
+	for child in actors.get_children():
+		if child is Actor:
+			if local_to_map(child.global_position) == cell:
+				return child
+	return null
+
+
+func check_win() -> void:
+	var all_targets = true
+	for child in targets.get_children():
+		if child is Target:
+			var actor = get_actor_on_tile(local_to_map(child.global_position))
+			if actor == null || actor.mask != child.mask:
+				all_targets = false
+	
+	if all_targets:
+		print("YOU WON!")
