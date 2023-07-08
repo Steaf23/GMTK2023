@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcmrga8nmclxy"]
+[gd_scene load_steps=6 format=3 uid="uid://bcmrga8nmclxy"]
 
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="1_acdmr"]
+[ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_j6w1k"]
+[ext_resource type="PackedScene" uid="uid://bi1arjhkp7y4s" path="res://Level Select/level_button.tscn" id="3_gmcdo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yodi6"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kgkm"]
+bg_color = Color(0, 0, 0, 0.780392)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Level Select" type="Control"]
 layout_mode = 3
@@ -11,48 +23,45 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_j6w1k")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -26.5
-offset_top = -44.5
-offset_right = 26.5
-offset_bottom = 44.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_acdmr")
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="Level 0" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Level 0	"
+text = "Level Select"
+label_settings = SubResource("LabelSettings_yodi6")
+horizontal_alignment = 1
 
-[node name="Level 1" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-text = "Le"
-
-[node name="Level 2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Level 2"
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_8kgkm")
+horizontal_scroll_mode = 0
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Quit"
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Levels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="First Level" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Levels" instance=ExtResource("3_gmcdo")]
+layout_mode = 2
