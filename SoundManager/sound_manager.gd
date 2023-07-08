@@ -33,6 +33,7 @@ func stop_music() -> void:
 # Play new sounds, while removing the oldest currently playing if the pool is full.
 # this results in the most satisfying outcome.
 func play_sfx(path: String) -> void:
+	print(path)
 	if !FileAccess.file_exists(path):
 		print("Cannot find " + path + "!")
 		return
