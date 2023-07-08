@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://l13t1wrwy311"]
+
+[sub_resource type="GDScript" id="GDScript_wmhix"]
+script/source = "extends Resource
+
+@export var steps: PackedStringArray
+
+func _init():
+	
+	steps = []
+"
+
+[resource]
+script = SubResource("GDScript_wmhix")
+steps = ["res://Assets/Audio/SFX/step1.wav", "res://Assets/Audio/SFX/step2.wav", "res://Assets/Audio/SFX/step3.wav", "res://Assets/Audio/SFX/step4.wav"]
