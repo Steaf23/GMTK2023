@@ -47,7 +47,6 @@ func switch(new_level: int) -> void:
 
 
 func _on_level_won(turns: int, level: int) -> void:
-	print(level, current_level)
 	LevelProgress.set_progress(level, turns)
 	
 	gui.play_button.disabled = false

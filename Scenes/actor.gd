@@ -35,6 +35,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		self.mask = mask
+		self.current_cell = global_position / TILE_SIZE
 
 
 # Determine position based on mask
