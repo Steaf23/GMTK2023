@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_7fyvk"]
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_vf05j"]
-[ext_resource type="Resource" uid="uid://ctepxxtvq48xx" path="res://Masks/mask_red_lvl3.tres" id="3_a3brf"]
-[ext_resource type="Resource" uid="uid://crwq4sfujg0r1" path="res://Masks/mask_blue_lvl3.tres" id="4_yahgv"]
+[ext_resource type="Resource" uid="uid://ctepxxtvq48xx" path="res://Masks/mask_pink.tres" id="3_tib5c"]
+[ext_resource type="Resource" uid="uid://crwq4sfujg0r1" path="res://Masks/mask_orange.tres" id="4_avkvl"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="5_jbmau"]
 [ext_resource type="Resource" uid="uid://cqxlalbqm3a3h" path="res://Masks/mask_green.tres" id="5_su8ph"]
 [ext_resource type="Resource" uid="uid://d4hu58wo5ikx3" path="res://Masks/mask_yellow.tres" id="6_d2742"]
@@ -13,11 +13,11 @@ layer_0/tile_data = PackedInt32Array(196616, 917507, 14, 262152, 917507, 15, 327
 
 [node name="Target2" parent="Targets" index="0" instance=ExtResource("2_vf05j")]
 position = Vector2(464, 112)
-mask = ExtResource("3_a3brf")
+mask = ExtResource("3_tib5c")
 
 [node name="Target3" parent="Targets" index="1" instance=ExtResource("2_vf05j")]
 position = Vector2(336, 112)
-mask = ExtResource("4_yahgv")
+mask = ExtResource("4_avkvl")
 
 [node name="Target4" parent="Targets" index="2" instance=ExtResource("2_vf05j")]
 position = Vector2(336, 240)
@@ -29,11 +29,11 @@ mask = ExtResource("6_d2742")
 
 [node name="Actor2" parent="Actors" index="0" instance=ExtResource("5_jbmau")]
 position = Vector2(256, 160)
-mask = ExtResource("4_yahgv")
+mask = ExtResource("4_avkvl")
 
 [node name="Actor3" parent="Actors" index="1" instance=ExtResource("5_jbmau")]
 position = Vector2(384, 32)
-mask = ExtResource("3_a3brf")
+mask = ExtResource("3_tib5c")
 
 [node name="Actor4" parent="Actors" index="2" instance=ExtResource("5_jbmau")]
 position = Vector2(384, 288)
