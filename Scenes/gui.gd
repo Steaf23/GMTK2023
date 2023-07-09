@@ -31,6 +31,7 @@ func unpause() -> void:
 
 
 func _on_pause_pressed() -> void:
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	if get_tree().paused:
 		unpause()
 	else:
@@ -39,18 +40,22 @@ func _on_pause_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	unpause()
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	reset_pressed.emit()
 
 
 func _on_home_pressed() -> void:
 	# TODO: send to menu/level select
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	unpause()
 	menu_pressed.emit()
 
 
 func _on_play_pressed() -> void:
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	play_pressed.emit()
 
 
 func _on_resume_pressed() -> void:
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	unpause()
