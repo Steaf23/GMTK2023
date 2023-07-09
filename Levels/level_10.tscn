@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_clu7o"]
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_46bki"]
+[ext_resource type="Resource" uid="uid://dchocycdqne5g" path="res://Masks/mask_yellow_lvl10.tres" id="3_kfbfc"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="4_jyqh7"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="5_bvu7l"]
-[ext_resource type="Resource" uid="uid://d4hu58wo5ikx3" path="res://Masks/mask_yellow.tres" id="6_hx3xi"]
 [ext_resource type="Resource" uid="uid://ddgwvr78u14nq" path="res://Masks/mask_white.tres" id="6_rouag"]
 
 [node name="Level1" instance=ExtResource("1_clu7o")]
@@ -12,7 +12,7 @@ layer_0/tile_data = PackedInt32Array(327688, 983043, 15, 393233, 458755, 14, 327
 
 [node name="Target4" parent="Targets" index="0" instance=ExtResource("2_46bki")]
 position = Vector2(272, 112)
-mask = ExtResource("6_hx3xi")
+mask = ExtResource("3_kfbfc")
 
 [node name="Target2" parent="Targets" index="1" instance=ExtResource("2_46bki")]
 position = Vector2(304, 176)
@@ -24,7 +24,7 @@ mask = ExtResource("4_jyqh7")
 
 [node name="Actor4" parent="Actors" index="0" instance=ExtResource("5_bvu7l")]
 position = Vector2(192, 96)
-mask = ExtResource("6_hx3xi")
+mask = ExtResource("3_kfbfc")
 
 [node name="Actor3" parent="Actors" index="1" instance=ExtResource("5_bvu7l")]
 position = Vector2(192, 160)
