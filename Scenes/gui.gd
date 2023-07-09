@@ -25,11 +25,13 @@ func _input(event: InputEvent) -> void:
 func pause() -> void:
 	get_tree().paused = true
 	pause_menu.show()
+	SoundManager.muffle_music(true)
 
 
 func unpause() -> void:
 	get_tree().paused = false
 	pause_menu.hide()
+	SoundManager.muffle_music(false)
 	
 
 func turn_passed(new_turn: int) -> void:

@@ -34,6 +34,9 @@ func play_music(path: String) -> void:
 func stop_music() -> void:
 	music_player.stop()
 	
+	
+func muffle_music(muffle: bool) -> void:
+	AudioServer.set_bus_effect_enabled(AudioServer.get_bus_index("Music"), 0, muffle)
 
 # Play new sounds, while removing the oldest currently playing if the pool is full.
 # this results in the most satisfying outcome.
