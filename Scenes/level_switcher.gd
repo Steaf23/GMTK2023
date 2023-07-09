@@ -3,6 +3,7 @@ extends Node
 @export var level_pattern = "res://Levels/level_%d.tscn"
 
 @onready var LEVEL_SELECT: PackedScene = preload("res://Level Select/level_select.tscn")
+@onready var END_SCREEN: PackedScene = preload("res://Scenes/end_screen.tscn")
 # Change this when selecting a level from the menu 
 @onready var first_level: int = -1
 @onready var gui: GUI = $GUI
@@ -46,6 +47,7 @@ func _on_level_won(level: int) -> void:
 	if has_level(new_level):
 		switch(new_level)
 	else:
+		switch_to_end()
 		print("THANKS FOR PLAYING")
 
 
@@ -59,6 +61,20 @@ func _on_gui_menu_pressed() -> void:
 	
 	gui.play_button.hide()
 	gui.home_button.hide()
+	gui.reset_button.hide()
+	gui.scene_counter.hide()
+
+
+func switch_to_end() -> void:
+	for c in $Level.get_children():
+		c.queue_free()
+		
+	var end_screen_scn: EndScreen = END_SCREEN.instantiate()
+	end_screen_scn.home_pressed.connect(_on_gui_menu_pressed)
+	$Level.add_child(end_screen_scn)
+	
+	gui.reset_button.hide()
+	gui.play_button.hide()
 	gui.reset_button.hide()
 	gui.scene_counter.hide()
 
@@ -77,6 +93,7 @@ func _on_gui_play_pressed() -> void:
 
 func _on_level_chosen(level: int) -> void:
 	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
+	gui.reset_button.show()
 	gui.play_button.show()
 	gui.home_button.show()
 	gui.reset_button.show()
