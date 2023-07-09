@@ -6,4 +6,4 @@ extends Node2D
 	set(new_mask):
 		mask = new_mask
 		if new_mask != null:
-			$Sprite2D.modulate = mask.color
+			$Overlay.modulate = mask.color

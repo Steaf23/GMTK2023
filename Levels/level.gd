@@ -4,6 +4,7 @@ extends TileMap
 signal level_won()
 signal turn_started()
 signal turn_finished()
+signal turn_passed(new_turn)
 
 @export var move_with_key: bool = true
 
@@ -13,11 +14,16 @@ signal turn_finished()
 
 var selected_actor: Actor = null
 
-var turn: int = 0
+var turn: int = 0: 
+	set(value):
+		turn = value
+		turn_passed.emit(turn)
 var turn_ended = true
 
 
 func _ready() -> void:
+	self.turn = 0
+	
 	for t in get_used_cells_by_custom_data(0, "collision", 1):
 		if t.x % 2 != t.y % 2:
 			$Grid.set_cell(0, t, 0, Vector2i())
@@ -42,10 +48,10 @@ func play_turn() -> void:
 		if child is Actor:
 			var target_cell = child.current_cell + child.get_mask_target_pos()
 			if can_move_to_tile(child, target_cell):
-				child.move()
-				SoundManager.play_sfx(steps[randi_range(0,steps.size()-1)])
+				child.move(get_target_on_tile(target_cell) != null)
+				SoundManager.play_sfx(steps[randi_range(0,steps.size()-1)])		
 	
-	turn += 1
+	self.turn += 1
 	check_win()
 	
 	await get_tree().create_timer(0.3).timeout
@@ -98,6 +104,16 @@ func get_actor_on_tile(cell: Vector2i) -> Actor:
 				return child
 	return null
 
+	
+func get_target_on_tile(cell: Vector2i) -> Target:
+	for child in targets.get_children():
+		if child is Target:
+			print((child.global_position + Vector2(2, 2)) / cell_quadrant_size)
+			if (floor(child.global_position + Vector2(2, 2)) / cell_quadrant_size) == Vector2(cell):
+				return child
+	return null
+
+
 
 func check_win() -> void:
 	if targets.get_child_count() == 0:
@@ -107,6 +123,7 @@ func check_win() -> void:
 	for child in targets.get_children():
 		if child is Target:
 			var actor = get_actor_on_tile(local_to_map(child.global_position))
+			
 			if actor == null || actor.mask != child.mask:
 				all_targets = false
 	

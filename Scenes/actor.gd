@@ -18,6 +18,7 @@ signal mask_move_finished()
 			mask_sprite.texture = new_mask.texture
 			target.global_position = current_cell * TILE_SIZE + new_mask.next_pos * TILE_SIZE
 			target.modulate = new_mask.color
+			
 		
 @onready var mask_sprite = $MaskSprite
 @onready var target = $Target
@@ -64,7 +65,8 @@ func throw_mask(target_position: Vector2i) -> void:
 	mask_tween_pos.finished.connect(_on_mask_thrown)
 
 
-func move() -> void:
+func move(to_target: bool) -> void:
+	print(to_target)
 	if mask == null:
 		return
 		

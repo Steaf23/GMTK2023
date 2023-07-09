@@ -31,10 +31,12 @@ func switch(new_level: int) -> void:
 	else:
 		scn = load(level_pattern % new_level).instantiate()
 		
-	$Level.add_child(scn)
+	scn.turn_passed.connect(func(turn: int): gui.turn_passed(turn))
 	scn.level_won.connect(_on_level_won.bind(new_level))
 	scn.turn_started.connect(func(): gui.play_button.disabled = true)
 	scn.turn_finished.connect(func(): gui.play_button.disabled = false)
+	$Level.add_child(scn)
+	
 
 
 func _on_level_won(level: int) -> void:

@@ -1,19 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://66lwrtr6m738"]
+[gd_scene load_steps=6 format=3 uid="uid://66lwrtr6m738"]
 
 [ext_resource type="Script" path="res://Scenes/target.gd" id="1_aiiir"]
+[ext_resource type="Texture2D" uid="uid://dn2n6j000x58n" path="res://Assets/Art/target.png" id="3_8o676"]
+[ext_resource type="Texture2D" uid="uid://ca1rmxjnt5q4v" path="res://Assets/Art/target_overlay.png" id="3_j54cs"]
 
-[sub_resource type="Gradient" id="Gradient_ts6xm"]
-colors = PackedColorArray(0.0562916, 0.0562916, 0.0562916, 1, 1, 1, 1, 1)
+[sub_resource type="Gradient" id="Gradient_2jn3v"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5ggng"]
-gradient = SubResource("Gradient_ts6xm")
-width = 28
-height = 28
-fill_from = Vector2(0.512821, 1)
-fill_to = Vector2(0.508547, 0)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2ajy6"]
+gradient = SubResource("Gradient_2jn3v")
+fill_from = Vector2(0.521368, 1)
+fill_to = Vector2(0.512821, 0)
 
 [node name="Target" type="Node2D"]
 script = ExtResource("1_aiiir")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_5ggng")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("3_8o676")
+
+[node name="Overlay" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("3_j54cs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Overlay"]
+position = Vector2(1.49012e-07, -4)
+scale = Vector2(0.3125, 0.40625)
+texture = SubResource("GradientTexture2D_2ajy6")

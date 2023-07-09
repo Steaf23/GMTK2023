@@ -13,6 +13,7 @@ signal play_pressed()
 
 func _ready() -> void:
 	unpause()
+	turn_passed(0)
 	
 
 func _input(event: InputEvent) -> void:
@@ -28,6 +29,10 @@ func pause() -> void:
 func unpause() -> void:
 	get_tree().paused = false
 	pause_menu.hide()
+	
+
+func turn_passed(new_turn: int) -> void:
+	$"MarginContainer3/Scene Counter/Counter".text = str(new_turn + 1)
 
 
 func _on_pause_pressed() -> void:
