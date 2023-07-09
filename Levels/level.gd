@@ -55,14 +55,21 @@ func play_turn() -> void:
 
 func _on_actor_clicked(actor: Actor) -> void:
 	if selected_actor == actor:
+		selected_actor.show_outline(false)
 		selected_actor = null
 	elif selected_actor == null:
 		selected_actor = actor
+		actor.show_outline(true)
 	else:
+		selected_actor.show_outline(false)
+		actor.show_outline(false)
 		switch_masks(actor, selected_actor)
+		
 		
 
 func switch_masks(actor1: Actor, actor2: Actor) -> void:
+	turn_started.emit()
+	turn_ended = false
 	actor1.throw_mask(actor2.global_position)
 	actor2.throw_mask(actor1.global_position)
 	actor1.mask_move_finished.connect(
@@ -73,6 +80,8 @@ func switch_masks(actor1: Actor, actor2: Actor) -> void:
 	
 		selected_actor = null
 		check_win()
+		turn_finished.emit()
+		turn_ended = true
 	, CONNECT_ONE_SHOT)
 
 

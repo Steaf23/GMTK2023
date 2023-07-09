@@ -12,4 +12,4 @@ func _init():
 
 [resource]
 script = SubResource("GDScript_wmhix")
-steps = ["res://Assets/Audio/SFX/step1.wav", "res://Assets/Audio/SFX/step2.wav", "res://Assets/Audio/SFX/step3.wav", "res://Assets/Audio/SFX/step4.wav"]
+steps = PackedStringArray("res://Assets/Audio/SFX/step1.wav", "res://Assets/Audio/SFX/step2.wav", "res://Assets/Audio/SFX/step3.wav", "res://Assets/Audio/SFX/step4.wav")

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_07je6"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_7qp14"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_yrq0p"]
-[ext_resource type="Texture2D" uid="uid://d0xc7ncsbh0xe" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
+[ext_resource type="Texture2D" uid="uid://q51me8pkrak8" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_03f4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mgnaa"]
@@ -12,7 +12,6 @@ font_size = 72
 
 [node name="Level0" instance=ExtResource("1_v0igt")]
 layer_0/tile_data = PackedInt32Array(327688, 786435, 14, 327697, 786435, 14, 327689, 786435, 14, 327698, 851971, 14, 327695, 786435, 14, 327696, 786435, 14, 327694, 786435, 14, 327693, 786435, 14, 327692, 786435, 14, 327691, 786435, 14, 327690, 786435, 14, 327687, 786435, 14, 327686, 786435, 14, 327685, 786435, 14, 327684, 786435, 14, 327683, 786435, 14, 327682, 786435, 14, 327681, 720899, 14, 393234, 1048579, 17, 393233, 983043, 17, 393232, 983043, 17, 393231, 983043, 17, 393230, 983043, 17, 393229, 983043, 17, 393228, 983043, 17, 393227, 983043, 17, 393226, 983043, 17, 393225, 983043, 17, 393224, 983043, 17, 393223, 983043, 17, 393222, 983043, 17, 393221, 983043, 17, 393220, 983043, 17, 393219, 983043, 17, 393218, 983043, 17, 393217, 917507, 17)
-move_with_key = false
 
 [node name="Target" parent="Targets" index="0" instance=ExtResource("2_07je6")]
 position = Vector2(400, 176)
@@ -22,9 +21,7 @@ mask = ExtResource("3_7qp14")
 position = Vector2(128, 160)
 mask = ExtResource("3_7qp14")
 
-[node name="Tutorial" type="Node2D" parent="." index="4"]
-
-[node name="Main" type="CanvasLayer" parent="." index="5"]
+[node name="Main" type="CanvasLayer" parent="." index="4"]
 
 [node name="Control" type="MarginContainer" parent="Main" index="0"]
 anchors_preset = 15
@@ -59,6 +56,8 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="Main/HBoxContainer" index="0"]
 layout_mode = 2
+theme = ExtResource("6_03f4i")
+theme_override_font_sizes/font_size = 20
 text = "Made 
 during: "
 horizontal_alignment = 1

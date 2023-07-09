@@ -80,6 +80,10 @@ func move() -> void:
 	current_tween.tween_property(self, ^"global_position", Vector2(target), 0.3)
 
 
+func show_outline(enable: bool) -> void:
+	mask_sprite.material.set_shader_parameter("enabled", enable)
+
+
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action_pressed("select"):
 		SoundManager.play_sfx(mask.sfx)

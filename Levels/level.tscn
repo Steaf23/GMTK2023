@@ -618,6 +618,7 @@ sources/0 = SubResource("TileSetAtlasSource_ksn7p")
 pattern_0 = SubResource("TileMapPattern_iikno")
 
 [node name="Level" type="TileMap"]
+z_index = -2
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ppgbf")
 cell_quadrant_size = 32

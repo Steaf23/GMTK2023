@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/level_switcher.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 boot_splash/bg_color=Color(0.0313726, 0.0313726, 0.0313726, 1)
 boot_splash/image="res://GMTK2023_SPLASH.png"
-config/icon="res://icon.svg"
+config/icon="res://Assets/Art/Blue Mask.png"
 
 [audio]
 
@@ -62,3 +62,4 @@ reset={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.0745098, 0.0745098, 0.0745098, 1)
