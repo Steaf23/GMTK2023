@@ -35,7 +35,7 @@ func unpause() -> void:
 	
 
 func turn_passed(new_turn: int) -> void:
-	$"MarginContainer3/Scene Counter/Counter".text = str(new_turn + 1)
+	$"MarginContainer3/Scene Counter/Counter".text = str(new_turn)
 
 
 func _on_pause_pressed() -> void:

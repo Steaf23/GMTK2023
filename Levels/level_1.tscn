@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_58k08"]
 [ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="4_r857g"]
 [ext_resource type="Shader" path="res://Resources/outline.gdshader" id="7_7ywx2"]
-[ext_resource type="Texture2D" uid="uid://bjl7cxshauy6s" path="res://Assets/Art/Pointer.png" id="8_34fs7"]
+[ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="8_34fs7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smcgb"]
 shader = ExtResource("7_7ywx2")

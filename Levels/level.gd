@@ -31,6 +31,10 @@ func _ready() -> void:
 	for child in actors.get_children():
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
+			
+	move_with_key = false
+	await get_tree().create_timer(0.5).timeout
+	move_with_key = true
 	
 
 func _physics_process(delta: float) -> void:
@@ -42,6 +46,7 @@ func play_turn() -> void:
 	if !turn_ended:
 		return
 	
+	self.turn += 1
 	turn_started.emit()
 	turn_ended = false
 	for child in actors.get_children():
@@ -51,7 +56,6 @@ func play_turn() -> void:
 				child.move(get_target_on_tile(target_cell) != null)
 				SoundManager.play_sfx(steps[randi_range(0,steps.size()-1)])		
 	
-	self.turn += 1
 	check_win()
 	
 	await get_tree().create_timer(0.3).timeout

@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bedbak0uxa66q"]
+
+[ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_itcrn"]
+[ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_w84uv"]
+[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="3_bgq86"]
+[ext_resource type="Resource" uid="uid://dkm1n7banmc3y" path="res://Masks/mask_yellow_lvl201.tres" id="4_61pgq"]
+[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="4_mdkl4"]
+
+[node name="Level 201" instance=ExtResource("1_itcrn")]
+layer_0/tile_data = PackedInt32Array(393231, 1048579, 16, 327695, 1048579, 15, 262159, 1048579, 14, 393230, 983043, 16, 327694, 983043, 15, 262158, 983043, 14, 393229, 983043, 16, 327693, 983043, 15, 262157, 983043, 14, 393228, 983043, 16, 327692, 983043, 15, 262156, 983043, 14, 393227, 983043, 16, 327691, 983043, 15, 262155, 983043, 14, 393226, 983043, 16, 327690, 983043, 15, 262154, 983043, 14, 393225, 983043, 16, 327689, 983043, 15, 262153, 983043, 14, 393224, 983043, 16, 327688, 983043, 15, 262152, 983043, 14, 393223, 983043, 16, 327687, 983043, 15, 262151, 983043, 14, 393222, 983043, 16, 327686, 983043, 15, 262150, 983043, 14, 393221, 983043, 16, 327685, 983043, 15, 262149, 983043, 14, 393220, 917507, 16, 327684, 917507, 15, 262148, 917507, 14, 589829, 1048579, 16, 524293, 1048579, 14, 589828, 983043, 16, 524292, 983043, 14, 589827, 983043, 16, 524291, 983043, 14, 589826, 983043, 16, 524290, 983043, 14, 589825, 917507, 16, 524289, 917507, 14, 589842, 1048579, 16, 524306, 1048579, 14, 589841, 983043, 16, 524305, 983043, 14, 589840, 983043, 16, 524304, 983043, 14, 589839, 983043, 16, 524303, 983043, 14, 589838, 917507, 16, 524302, 917507, 14, 131077, 1048579, 16, 65541, 1048579, 14, 131076, 983043, 16, 65540, 983043, 14, 131075, 983043, 16, 65539, 983043, 14, 131074, 983043, 16, 65538, 983043, 14, 131073, 917507, 16, 65537, 917507, 14, 131090, 1048579, 16, 65554, 1048579, 14, 131089, 983043, 16, 65553, 983043, 14, 131088, 983043, 16, 65552, 983043, 14, 131087, 983043, 16, 65551, 983043, 14, 131086, 917507, 16, 65550, 917507, 14)
+
+[node name="Target" parent="Targets" index="0" instance=ExtResource("2_w84uv")]
+position = Vector2(144, 144)
+mask = ExtResource("4_61pgq")
+
+[node name="Target2" parent="Targets" index="1" instance=ExtResource("2_w84uv")]
+position = Vector2(176, 48)
+mask = ExtResource("4_mdkl4")
+
+[node name="Actor" parent="Actors" index="0" instance=ExtResource("3_bgq86")]
+position = Vector2(224, 192)
+mask = ExtResource("4_61pgq")
+
+[node name="Actor2" parent="Actors" index="1" instance=ExtResource("3_bgq86")]
+position = Vector2(416, 192)
+mask = ExtResource("4_mdkl4")
