@@ -132,12 +132,14 @@ func check_win() -> void:
 		if child is Target:
 			var actor = get_actor_on_tile(local_to_map(child.global_position))
 			
-			if actor == null || actor.mask != child.mask:
+			if actor == null:
 				all_targets = false
 	
 	if all_targets:
 		SoundManager.play_sfx("res://Assets/Audio/SFX/stage_clear.wav")
 		print("Level finished in {0} turn(s)".format([turn]))
+		
+		await get_tree().create_timer(1.0).timeout
 		level_won.emit(turn)
 
 
