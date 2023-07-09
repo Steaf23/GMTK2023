@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://uknarkhndnd0"]
+
+[ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_da5eu"]
+[ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_6ed7l"]
+[ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="3_6tvx6"]
+[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_5251j"]
+[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="5_ng1qh"]
+[ext_resource type="Resource" uid="uid://d4hu58wo5ikx3" path="res://Masks/mask_yellow.tres" id="6_kgafg"]
+
+[node name="Level 2" instance=ExtResource("1_da5eu")]
+
+[node name="ReferenceRect" parent="." index="0"]
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 639.0
+offset_bottom = 362.0
+
+[node name="Target" parent="Targets" index="0" instance=ExtResource("2_6ed7l")]
+position = Vector2(271, 143)
+mask = ExtResource("3_6tvx6")
+
+[node name="Target2" parent="Targets" index="1" instance=ExtResource("2_6ed7l")]
+position = Vector2(271, 78)
+mask = ExtResource("5_ng1qh")
+
+[node name="Target3" parent="Targets" index="2" instance=ExtResource("2_6ed7l")]
+position = Vector2(240, 238)
+mask = ExtResource("6_kgafg")
+
+[node name="Actor" parent="Actors" index="0" instance=ExtResource("4_5251j")]
+position = Vector2(385, 224)
+
+[node name="Actor2" parent="Actors" index="1" instance=ExtResource("4_5251j")]
+position = Vector2(161, 129)
+mask = ExtResource("5_ng1qh")
+
+[node name="Actor3" parent="Actors" index="2" instance=ExtResource("4_5251j")]
+position = Vector2(416, 64)
+mask = ExtResource("6_kgafg")
