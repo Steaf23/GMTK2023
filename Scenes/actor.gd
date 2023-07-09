@@ -29,13 +29,13 @@ var current_tween: Tween = null
 
 func _ready() -> void:
 	self.mask = mask
-	current_cell = global_position / TILE_SIZE
+	self.current_cell = (global_position + Vector2(2.0, 2.0)) / TILE_SIZE
 	
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		self.mask = mask
-		self.current_cell = global_position / TILE_SIZE
+		self.current_cell = (global_position + Vector2(2.0, 2.0)) / TILE_SIZE
 
 
 # Determine position based on mask

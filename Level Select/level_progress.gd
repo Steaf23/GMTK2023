@@ -24,6 +24,5 @@ func get_progress(level: int) -> Dictionary:
 
 
 func set_progress(level: int, turns: int) -> void:
-	level+= 1
 	if progress.size() > level:
 		progress[level].turns = turns

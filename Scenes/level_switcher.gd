@@ -103,7 +103,6 @@ func _on_gui_play_pressed() -> void:
 
 
 func _on_level_chosen(level: int) -> void:
-	SoundManager.play_music("res://Assets/Audio/Music/main_theme.ogg")
 	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	gui.reset_button.show()
 	gui.play_button.show()

@@ -11,7 +11,7 @@ signal level_btn_pressed()
 func _ready() -> void:
 	for level in range(0, LevelProgress.progress.size()):
 		var level_btn = LEVEL_BTN.instantiate()
-		level_btn.set_text(" Level %d " % (level + 1))
+		level_btn.set_text(" Level %d " % level)
 		level_btn.level = level
 		levels.add_child(level_btn)
 		level_btn.set_progress()

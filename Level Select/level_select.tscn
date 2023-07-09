@@ -61,3 +61,9 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Levels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Thanks for playing!"
+label_settings = SubResource("LabelSettings_yodi6")
+horizontal_alignment = 1
