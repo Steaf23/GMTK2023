@@ -32,7 +32,7 @@ func _ready() -> void:
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
 			
-	SoundManager.play_music("res://Assets/Audio/music1.ogg")
+	SoundManager.play_music("res://Assets/Audio/Music/main_theme.ogg")
 
 
 func _physics_process(delta: float) -> void:
