@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bajte0ibhll8v"]
+[gd_scene load_steps=13 format=3 uid="uid://bajte0ibhll8v"]
 
 [ext_resource type="Script" path="res://Scenes/gui.gd" id="1_hntvv"]
 [ext_resource type="Texture2D" uid="uid://blbutsk38a14n" path="res://Assets/Art/Gear Icon.png" id="2_5d84w"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bao3dig6qrf15" path="res://Assets/Art/Reset.png" id="3_ers5a"]
 [ext_resource type="Texture2D" uid="uid://bk4828vccc426" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_viggc"]
+[ext_resource type="Texture2D" uid="uid://bkjuo2fkax45" path="res://Assets/Art/Scene Counter.png" id="8_mx8r5"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="9_t08o4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopl2"]
 bg_color = Color(0, 0, 0, 0.780392)
@@ -140,6 +142,38 @@ icon = ExtResource("3_ers5a")
 [node name="Home" type="Button" parent="PauseMenu/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("4_dswpd")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+offset_right = 93.0
+offset_bottom = 89.0
+theme = ExtResource("6_viggc")
+
+[node name="Scene Counter" type="TextureRect" parent="MarginContainer3"]
+layout_mode = 2
+texture = ExtResource("8_mx8r5")
+
+[node name="Scene" type="Label" parent="MarginContainer3/Scene Counter"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 80.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Scene"
+horizontal_alignment = 1
+
+[node name="Counter" type="Label" parent="MarginContainer3/Scene Counter"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 35.0
+offset_right = 68.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "1"
+horizontal_alignment = 1
+script = ExtResource("9_t08o4")
 
 [connection signal="pressed" from="MarginContainer2/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="MarginContainer/Play" to="." method="_on_play_pressed"]
