@@ -9,6 +9,7 @@ signal turn_finished()
 
 @onready var actors = $Actors
 @onready var targets = $Targets
+@onready var steps = load("res://Assets/Audio/Resources/sfx_res.tres").steps
 
 var selected_actor: Actor = null
 
@@ -42,6 +43,7 @@ func play_turn() -> void:
 			var target_cell = child.current_cell + child.get_mask_target_pos()
 			if can_move_to_tile(child, target_cell):
 				child.move()
+				SoundManager.play_sfx(steps[randi_range(0,steps.size()-1)])
 	
 	turn += 1
 	check_win()
@@ -100,6 +102,7 @@ func check_win() -> void:
 				all_targets = false
 	
 	if all_targets:
+		SoundManager.play_sfx("res://Assets/Audio/SFX/stage_clear.wav")
 		print("Level finished in {0} turn(s)".format([turn]))
 		level_won.emit()
 
