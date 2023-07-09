@@ -64,3 +64,11 @@ func _on_play_pressed() -> void:
 func _on_resume_pressed() -> void:
 	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	unpause()
+
+
+func _on_scene_counter_mouse_entered() -> void:
+	scene_counter.modulate = Color(1.0, 1.0, 1.0, 0.5)
+
+
+func _on_scene_counter_mouse_exited() -> void:
+	scene_counter.modulate = Color(1.0, 1.0, 1.0, 1.0)

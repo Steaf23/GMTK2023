@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3odeyef838bk"]
+[gd_scene load_steps=18 format=3 uid="uid://b3odeyef838bk"]
 
 [ext_resource type="Texture2D" uid="uid://ckmism0cec2f3" path="res://Assets/Art/LPC_Ancient_Greece_Architecture.png" id="1_7143d"]
 [ext_resource type="Script" path="res://Levels/level.gd" id="2_g5uov"]
@@ -617,13 +617,6 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ksn7p")
 pattern_0 = SubResource("TileMapPattern_iikno")
 
-[sub_resource type="Sky" id="Sky_ijjwv"]
-
-[sub_resource type="Environment" id="Environment_rqtnv"]
-background_mode = 2
-background_energy_multiplier = 5.04
-sky = SubResource("Sky_ijjwv")
-
 [node name="Level" type="TileMap"]
 z_index = -2
 y_sort_enabled = true
@@ -656,6 +649,3 @@ format = 2
 [node name="Targets" type="Node2D" parent="."]
 
 [node name="Actors" type="Node2D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rqtnv")

@@ -18,9 +18,14 @@ func update_bus(bus_name, value) -> void:
 
 
 func play_music(path: String) -> void:
-	if !FileAccess.file_exists(path):
+	if music_player.playing:
+		if path == music_player.stream.resource_path:
+			return
+		else:
+			music_player.stop()
+		
+	if !ResourceLoader.exists(path):
 		print("Cannot find " + path + "!")
-		return
 		
 	music_player.stream = load(path)
 	music_player.play()	
@@ -32,10 +37,9 @@ func stop_music() -> void:
 
 # Play new sounds, while removing the oldest currently playing if the pool is full.
 # this results in the most satisfying outcome.
-func play_sfx(path: String) -> void:
-	if !FileAccess.file_exists(path):
+func play_sfx(path: String, volume_percent = 1.0) -> void:
+	if !ResourceLoader.exists(path):
 		print("Cannot find " + path + "!")
-		return
 	
 	if sfx_pool.get_children().size() >= pool_size:
 		_stop_player(_get_oldest_player())
@@ -49,6 +53,7 @@ func play_sfx(path: String) -> void:
 	player_counter += 1
 	sfx_pool.add_child(player)
 	player.play()
+	player.volume_db = linear_to_db(volume_percent)
 
 
 func stop_sfx(path: String) -> void:

@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://bajte0ibhll8v"]
 
 [ext_resource type="Script" path="res://Scenes/gui.gd" id="1_hntvv"]
-[ext_resource type="Texture2D" uid="uid://blbutsk38a14n" path="res://Assets/Art/Gear Icon.png" id="2_5d84w"]
+[ext_resource type="Texture2D" uid="uid://5h15wbxo2h6s" path="res://Assets/Art/Gear Icon.png" id="2_5d84w"]
 [ext_resource type="PackedScene" uid="uid://ux1lgkuk6mvl" path="res://SoundManager/volume_settings.tscn" id="2_qt66y"]
-[ext_resource type="Texture2D" uid="uid://d0eff0p0g0dm6" path="res://Assets/Art/Play Button.png" id="3_7ftxc"]
-[ext_resource type="Texture2D" uid="uid://bao3dig6qrf15" path="res://Assets/Art/Reset.png" id="3_ers5a"]
-[ext_resource type="Texture2D" uid="uid://bk4828vccc426" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
+[ext_resource type="Texture2D" uid="uid://d1sobxud1kuy8" path="res://Assets/Art/Play Button.png" id="3_7ftxc"]
+[ext_resource type="Texture2D" uid="uid://cynhrt22abccs" path="res://Assets/Art/Reset.png" id="3_ers5a"]
+[ext_resource type="Texture2D" uid="uid://dc7syg6kp4x0o" path="res://Assets/Art/Menu Button.png" id="4_dswpd"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_viggc"]
-[ext_resource type="Texture2D" uid="uid://bkjuo2fkax45" path="res://Assets/Art/Scene Counter.png" id="8_mx8r5"]
+[ext_resource type="Texture2D" uid="uid://c1m3swtnak380" path="res://Assets/Art/Scene Counter.png" id="8_mx8r5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xopl2"]
 bg_color = Color(0, 0, 0, 0.780392)
@@ -169,6 +169,8 @@ icon = ExtResource("3_ers5a")
 layout_mode = 2
 icon = ExtResource("4_dswpd")
 
+[connection signal="mouse_entered" from="MarginContainer3/Scene Counter" to="." method="_on_scene_counter_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer3/Scene Counter" to="." method="_on_scene_counter_mouse_exited"]
 [connection signal="pressed" from="MarginContainer2/Pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="PauseMenu/VBoxContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]

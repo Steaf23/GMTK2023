@@ -66,7 +66,6 @@ func throw_mask(target_position: Vector2i) -> void:
 
 
 func move(to_target: bool) -> void:
-	print(to_target)
 	if mask == null:
 		return
 		
@@ -92,11 +91,16 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 
 func _on_mouse_entered() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav", 0.5)
+	var tween = create_tween()
+	var tweener = tween.tween_property(mask_sprite, ^"scale", Vector2(0.8, 1.0), 0.1)
+	var tweener2 = tween.tween_property(mask_sprite, ^"scale", Vector2(1.0, 1.0), 0.1)
+	tweener.set_trans(Tween.TRANS_CUBIC)
+	tweener2.set_trans(Tween.TRANS_CUBIC)
 
 
 func _on_mouse_exited() -> void:
-	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+	pass
 
 
 func _on_mask_thrown() -> void:

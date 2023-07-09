@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca7x5w7grth5r"]
+[gd_scene load_steps=5 format=3 uid="uid://ca7x5w7grth5r"]
 
 [ext_resource type="Script" path="res://Scenes/cursor.gd" id="1_clqlj"]
 [ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="1_swg1b"]
+[ext_resource type="Shader" path="res://Resources/cursor.gdshader" id="2_ix7y7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_njnmo"]
+shader = ExtResource("2_ix7y7")
+shader_parameter/enabled = false
+shader_parameter/color = Color(1, 1, 1, 1)
 
 [node name="Cursor" type="CanvasLayer"]
 process_mode = 3
@@ -11,5 +17,6 @@ layer = 100
 script = ExtResource("1_clqlj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_njnmo")
 texture = ExtResource("1_swg1b")
 centered = false

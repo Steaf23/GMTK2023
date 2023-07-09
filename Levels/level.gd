@@ -31,6 +31,8 @@ func _ready() -> void:
 	for child in actors.get_children():
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
+			
+	SoundManager.play_music("res://Assets/Audio/music1.ogg")
 
 
 func _physics_process(delta: float) -> void:
@@ -113,7 +115,6 @@ func get_actor_on_tile(cell: Vector2i) -> Actor:
 func get_target_on_tile(cell: Vector2i) -> Target:
 	for child in targets.get_children():
 		if child is Target:
-			print((child.global_position + Vector2(2, 2)) / cell_quadrant_size)
 			if (floor(child.global_position + Vector2(2, 2)) / cell_quadrant_size) == Vector2(cell):
 				return child
 	return null
