@@ -55,6 +55,8 @@ func _on_level_won(turns: int, level: int) -> void:
 
 
 func _on_gui_menu_pressed() -> void:
+	SoundManager.play_music("res://Assets/Audio/Music/menu_theme.ogg")
+	
 	for c in $Level.get_children():
 		c.queue_free()
 		
@@ -69,6 +71,8 @@ func _on_gui_menu_pressed() -> void:
 
 
 func switch_to_end() -> void:
+	SoundManager.play_music("res://Assets/Audio/Music/menu_theme.ogg")
+	
 	for c in $Level.get_children():
 		c.queue_free()
 		
@@ -95,6 +99,7 @@ func _on_gui_play_pressed() -> void:
 
 
 func _on_level_chosen(level: int) -> void:
+	SoundManager.play_music("res://Assets/Audio/Music/main_theme.ogg")
 	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	gui.reset_button.show()
 	gui.play_button.show()
