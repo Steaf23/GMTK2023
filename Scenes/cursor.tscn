@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca7x5w7grth5r"]
+
+[ext_resource type="Script" path="res://Scenes/cursor.gd" id="1_clqlj"]
+[ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="1_swg1b"]
+
+[node name="Cursor" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_clqlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("1_swg1b")
+centered = false

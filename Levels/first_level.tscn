@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_07je6"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_7qp14"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_yrq0p"]
-[ext_resource type="Texture2D" uid="uid://d0xc7ncsbh0xe" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
+[ext_resource type="Texture2D" uid="uid://q51me8pkrak8" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_03f4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mgnaa"]

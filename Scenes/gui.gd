@@ -9,7 +9,7 @@ signal play_pressed()
 @onready var play_button: Button = $MarginContainer/Play
 @onready var home_button: Button = $PauseMenu/VBoxContainer/HBoxContainer/Home
 @onready var reset_button: Button = $PauseMenu/VBoxContainer/HBoxContainer/Reset
-
+@onready var scene_counter: Control = $"MarginContainer3/Scene Counter"
 
 func _ready() -> void:
 	unpause()

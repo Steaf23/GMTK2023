@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://0ompna74v6kb"]
 
 [ext_resource type="Script" path="res://SoundManager/volume_slider.gd" id="1_ci3fq"]
-[ext_resource type="AudioStream" uid="uid://lau153s7beq8" path="res://Assets/Audio/SFX/click.wav" id="2_rbxt0"]
+[ext_resource type="AudioStream" uid="uid://bio1464mcccdd" path="res://Assets/Audio/SFX/click.wav" id="2_rbxt0"]
 
 [node name="VolumeSlider" type="HBoxContainer"]
 offset_right = 13.0

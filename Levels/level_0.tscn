@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="4_ck1a4"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="4_q50jj"]
 [ext_resource type="Shader" path="res://Resources/outline.gdshader" id="7_ypp0u"]
-[ext_resource type="Texture2D" uid="uid://dn71q2wwibfv6" path="res://icon.svg" id="8_ua2xo"]
+[ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="8_77rqj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_smcgb"]
 shader = ExtResource("7_ypp0u")
@@ -37,13 +37,13 @@ position = Vector2(448, 160)
 z_index = 10
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tutorial" index="0"]
+modulate = Color(1, 1, 1, 0.47451)
 material = SubResource("ShaderMaterial_smcgb")
-position = Vector2(256, 192)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_ua2xo")
+position = Vector2(303, 218)
+texture = ExtResource("8_77rqj")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Tutorial" index="1"]
+modulate = Color(1, 1, 1, 0.435294)
 material = SubResource("ShaderMaterial_smcgb")
-position = Vector2(320, 192)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_ua2xo")
+position = Vector2(363, 217)
+texture = ExtResource("8_77rqj")

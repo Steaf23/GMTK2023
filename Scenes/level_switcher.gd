@@ -20,6 +20,7 @@ func has_level(level: int) -> bool:
 
 
 func switch(new_level: int) -> void:
+	gui.scene_counter.visible = new_level != -1
 	current_level = new_level
 	
 	for c in $Level.get_children():
@@ -59,6 +60,7 @@ func _on_gui_menu_pressed() -> void:
 	gui.play_button.hide()
 	gui.home_button.hide()
 	gui.reset_button.hide()
+	gui.scene_counter.hide()
 
 
 func _on_gui_reset_pressed() -> void:
@@ -78,4 +80,5 @@ func _on_level_chosen(level: int) -> void:
 	gui.play_button.show()
 	gui.home_button.show()
 	gui.reset_button.show()
+	gui.scene_counter.visible = level != -1
 	switch(level)

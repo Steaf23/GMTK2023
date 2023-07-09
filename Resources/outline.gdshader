@@ -15,8 +15,10 @@ void fragment()
     outline = min(outline, 1.0);
 
 	vec4 new_color = color;
-	new_color.a = abs(sin(TIME * 2.5)) * float(enabled);
-	
-	vec4 col_in = texture(TEXTURE, UV);
-	COLOR = mix(col_in, new_color, outline - col_in.a);
+	if (enabled)
+	{
+		new_color.a = abs(sin(TIME * 2.5));
+		vec4 col_in = texture(TEXTURE, UV);
+		COLOR = mix(col_in, new_color, outline - col_in.a);
+	}
 }
