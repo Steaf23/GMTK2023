@@ -61,12 +61,15 @@ func play_turn() -> void:
 
 func _on_actor_clicked(actor: Actor) -> void:
 	if selected_actor == actor:
+		SoundManager.play_sfx("res://Assets/Audio/SFX/mask_deselect.wav")
 		selected_actor.show_outline(false)
 		selected_actor = null
 	elif selected_actor == null:
+		SoundManager.play_sfx(actor.mask.sfx)
 		selected_actor = actor
 		actor.show_outline(true)
 	else:
+		SoundManager.play_sfx(actor.mask.sfx)
 		selected_actor.show_outline(false)
 		actor.show_outline(false)
 		switch_masks(actor, selected_actor)
@@ -74,6 +77,8 @@ func _on_actor_clicked(actor: Actor) -> void:
 		
 
 func switch_masks(actor1: Actor, actor2: Actor) -> void:
+	SoundManager.play_sfx(actor2.mask.sfx)
+	SoundManager.play_sfx("res://Assets/Audio/SFX/exchange.wav")
 	turn_started.emit()
 	turn_ended = false
 	actor1.throw_mask(actor2.global_position)

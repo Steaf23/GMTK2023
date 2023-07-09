@@ -74,6 +74,7 @@ func _on_gui_play_pressed() -> void:
 
 
 func _on_level_chosen(level: int) -> void:
+	SoundManager.play_sfx("res://Assets/Audio/SFX/click.wav")
 	gui.play_button.show()
 	gui.home_button.show()
 	gui.reset_button.show()

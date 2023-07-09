@@ -15,8 +15,8 @@ func _ready():
 func update_slider(value):
 	label.text = "%s: %s%%" % [bus.capitalize(), value] 
 	SoundManager.update_bus(bus, value)
-	testSound.play()
 
 
 func _on_h_slider_value_changed(value: float) -> void:
+	testSound.play()
 	update_slider(value)
