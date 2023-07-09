@@ -31,9 +31,7 @@ func _ready() -> void:
 	for child in actors.get_children():
 		if child is Actor:
 			child.clicked.connect(_on_actor_clicked.bind(child))
-			
-	SoundManager.play_music("res://Assets/Audio/Music/main_theme.ogg")
-
+	
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("turn") and move_with_key:

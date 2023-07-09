@@ -22,6 +22,11 @@ func has_level(level: int) -> bool:
 
 func switch(new_level: int) -> void:
 	gui.scene_counter.visible = new_level != first_level
+	if new_level == first_level:
+		SoundManager.play_music("res://Assets/Audio/Music/menu_theme.ogg")
+	else:
+		SoundManager.play_music("res://Assets/Audio/Music/main_theme.ogg")
+		
 	current_level = new_level
 	
 	for c in $Level.get_children():
