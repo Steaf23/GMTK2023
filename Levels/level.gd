@@ -1,7 +1,7 @@
 class_name Level
 extends TileMap
 
-signal level_won()
+signal level_won(turns)
 signal turn_started()
 signal turn_finished()
 signal turn_passed(new_turn)
@@ -136,7 +136,7 @@ func check_win() -> void:
 	if all_targets:
 		SoundManager.play_sfx("res://Assets/Audio/SFX/stage_clear.wav")
 		print("Level finished in {0} turn(s)".format([turn]))
-		level_won.emit()
+		level_won.emit(turn)
 
 
 func get_used_cells_by_custom_data(layer: int, data_name: StringName, data_value: Variant) -> Array[Vector2i]:

@@ -1,25 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://du1xmmommvm28"]
+[gd_scene load_steps=10 format=3 uid="uid://clndxflipbpp"]
 
 [ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_bdtgw"]
+[ext_resource type="Script" path="res://Levels/level_1.gd" id="2_hjac6"]
 [ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_yx4dq"]
 [ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_ev53y"]
 [ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_58k08"]
 [ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="4_r857g"]
+[ext_resource type="Shader" path="res://Resources/outline.gdshader" id="7_7ywx2"]
+[ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="8_34fs7"]
 
-[node name="Level1" instance=ExtResource("1_bdtgw")]
-layer_0/tile_data = PackedInt32Array(327688, 983043, 16, 393233, 983043, 17, 327697, 983043, 16, 327689, 983043, 16, 393234, 1048579, 17, 327698, 1048579, 16, 327694, 983043, 16, 327693, 983043, 16, 327692, 983043, 16, 327691, 983043, 16, 327690, 983043, 16, 327687, 983043, 16, 327686, 983043, 16, 327685, 983043, 16, 327684, 983043, 16, 327683, 983043, 16, 327682, 983043, 16, 327681, 917507, 16, 393217, 917507, 17, 393218, 983043, 17, 393219, 983043, 17, 393220, 983043, 17, 393221, 983043, 17, 393222, 983043, 17, 393223, 983043, 17, 393224, 983043, 17, 393225, 983043, 17, 393226, 983043, 17, 393227, 983043, 17, 393228, 983043, 17, 393229, 983043, 17, 393230, 983043, 17, 393231, 983043, 17, 393232, 983043, 17, 327695, 983043, 16, 327696, 983043, 16, 262145, 917507, 14, 262146, 983043, 14, 262147, 983043, 14, 262148, 983043, 14, 262149, 983043, 14, 262150, 983043, 14, 262151, 983043, 14, 262152, 983043, 14, 262153, 983043, 14, 262154, 983043, 14, 262155, 983043, 14, 262156, 983043, 14, 262157, 983043, 14, 262158, 983043, 14, 262159, 983043, 14, 262160, 983043, 14, 262161, 983043, 14, 262162, 1048579, 14)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smcgb"]
+shader = ExtResource("7_7ywx2")
+shader_parameter/enabled = false
+shader_parameter/color = Color(1, 1, 1, 1)
 
-[node name="Target2" parent="Targets" index="0" instance=ExtResource("2_yx4dq")]
-position = Vector2(80, 176)
-mask = ExtResource("4_r857g")
+[node name="Level0" instance=ExtResource("1_bdtgw")]
+layer_0/tile_data = PackedInt32Array(327688, 786435, 14, 327697, 786435, 14, 327689, 786435, 14, 327698, 851971, 14, 327695, 786435, 14, 327696, 786435, 14, 327694, 786435, 14, 327693, 786435, 14, 327692, 786435, 14, 327691, 786435, 14, 327690, 786435, 14, 327687, 786435, 14, 327686, 786435, 14, 327685, 786435, 14, 327684, 786435, 14, 327683, 786435, 14, 327682, 786435, 14, 327681, 720899, 14, 393234, 1048579, 17, 393233, 983043, 17, 393232, 983043, 17, 393231, 983043, 17, 393230, 983043, 17, 393229, 983043, 17, 393228, 983043, 17, 393227, 983043, 17, 393226, 983043, 17, 393225, 983043, 17, 393224, 983043, 17, 393223, 983043, 17, 393222, 983043, 17, 393221, 983043, 17, 393220, 983043, 17, 393219, 983043, 17, 393218, 983043, 17, 393217, 917507, 17)
+script = ExtResource("2_hjac6")
 
-[node name="Target3" parent="Targets" index="1" instance=ExtResource("2_yx4dq")]
+[node name="Target" parent="Targets" index="0" instance=ExtResource("2_yx4dq")]
 position = Vector2(528, 176)
 mask = ExtResource("3_ev53y")
 
-[node name="Actor2" parent="Actors" index="0" instance=ExtResource("4_58k08")]
+[node name="Target2" parent="Targets" index="1" instance=ExtResource("2_yx4dq")]
+position = Vector2(80, 176)
+mask = ExtResource("4_r857g")
+
+[node name="Actor" parent="Actors" index="0" instance=ExtResource("4_58k08")]
 position = Vector2(128, 160)
 mask = ExtResource("3_ev53y")
 
-[node name="Actor3" parent="Actors" index="1" instance=ExtResource("4_58k08")]
+[node name="Actor2" parent="Actors" index="1" instance=ExtResource("4_58k08")]
 position = Vector2(448, 160)
+
+[node name="Tutorial" type="Node2D" parent="." index="4"]
+z_index = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" index="0"]
+modulate = Color(1, 1, 1, 0.54902)
+material = SubResource("ShaderMaterial_smcgb")
+position = Vector2(301, 200)
+texture = ExtResource("8_34fs7")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial" index="1"]
+modulate = Color(1, 1, 1, 0.584314)
+material = SubResource("ShaderMaterial_smcgb")
+position = Vector2(357, 200)
+texture = ExtResource("8_34fs7")

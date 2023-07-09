@@ -1,49 +1,73 @@
-[gd_scene load_steps=10 format=3 uid="uid://clndxflipbpp"]
+[gd_scene load_steps=8 format=3 uid="uid://clndxflipbpp"]
 
-[ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_l7rw7"]
-[ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_0ghd2"]
-[ext_resource type="Script" path="res://Levels/level_0.gd" id="2_hnduv"]
-[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="3_0pfuq"]
-[ext_resource type="Resource" uid="uid://djtv54shp02r4" path="res://Masks/mask_red.tres" id="4_ck1a4"]
-[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="4_q50jj"]
-[ext_resource type="Shader" path="res://Resources/outline.gdshader" id="7_ypp0u"]
-[ext_resource type="Texture2D" uid="uid://ka0pkhcpq5wu" path="res://Assets/Art/Pointer.png" id="8_77rqj"]
+[ext_resource type="PackedScene" uid="uid://b3odeyef838bk" path="res://Levels/level.tscn" id="1_v0igt"]
+[ext_resource type="PackedScene" uid="uid://66lwrtr6m738" path="res://Scenes/target.tscn" id="2_07je6"]
+[ext_resource type="Resource" uid="uid://c7gqmpw1irtio" path="res://Masks/mask_blue.tres" id="3_7qp14"]
+[ext_resource type="PackedScene" uid="uid://e7tld003y8ip" path="res://Scenes/actor.tscn" id="4_yrq0p"]
+[ext_resource type="Texture2D" uid="uid://q51me8pkrak8" path="res://GMTK2023_SPLASH.png" id="5_sqs0p"]
+[ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="6_03f4i"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_smcgb"]
-shader = ExtResource("7_ypp0u")
-shader_parameter/enabled = true
-shader_parameter/color = Color(1, 1, 1, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_mgnaa"]
+font_size = 72
 
-[node name="Level0" instance=ExtResource("1_l7rw7")]
+[node name="Level0" instance=ExtResource("1_v0igt")]
 layer_0/tile_data = PackedInt32Array(327688, 786435, 14, 327697, 786435, 14, 327689, 786435, 14, 327698, 851971, 14, 327695, 786435, 14, 327696, 786435, 14, 327694, 786435, 14, 327693, 786435, 14, 327692, 786435, 14, 327691, 786435, 14, 327690, 786435, 14, 327687, 786435, 14, 327686, 786435, 14, 327685, 786435, 14, 327684, 786435, 14, 327683, 786435, 14, 327682, 786435, 14, 327681, 720899, 14, 393234, 1048579, 17, 393233, 983043, 17, 393232, 983043, 17, 393231, 983043, 17, 393230, 983043, 17, 393229, 983043, 17, 393228, 983043, 17, 393227, 983043, 17, 393226, 983043, 17, 393225, 983043, 17, 393224, 983043, 17, 393223, 983043, 17, 393222, 983043, 17, 393221, 983043, 17, 393220, 983043, 17, 393219, 983043, 17, 393218, 983043, 17, 393217, 917507, 17)
-script = ExtResource("2_hnduv")
 
-[node name="Target" parent="Targets" index="0" instance=ExtResource("2_0ghd2")]
-position = Vector2(528, 176)
-mask = ExtResource("4_q50jj")
+[node name="Target" parent="Targets" index="0" instance=ExtResource("2_07je6")]
+position = Vector2(400, 176)
+mask = ExtResource("3_7qp14")
 
-[node name="Target2" parent="Targets" index="1" instance=ExtResource("2_0ghd2")]
-position = Vector2(80, 176)
-mask = ExtResource("4_ck1a4")
-
-[node name="Actor" parent="Actors" index="0" instance=ExtResource("3_0pfuq")]
+[node name="Actor" parent="Actors" index="0" instance=ExtResource("4_yrq0p")]
 position = Vector2(128, 160)
-mask = ExtResource("4_q50jj")
+mask = ExtResource("3_7qp14")
 
-[node name="Actor2" parent="Actors" index="1" instance=ExtResource("3_0pfuq")]
-position = Vector2(448, 160)
+[node name="Main" type="CanvasLayer" parent="." index="4"]
 
-[node name="Tutorial" type="Node2D" parent="." index="4"]
-z_index = 10
+[node name="Control" type="MarginContainer" parent="Main" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_03f4i")
+theme_override_constants/margin_top = 60
 
-[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" index="0"]
-modulate = Color(1, 1, 1, 0.47451)
-material = SubResource("ShaderMaterial_smcgb")
-position = Vector2(303, 218)
-texture = ExtResource("8_77rqj")
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/Control" index="0"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
 
-[node name="Sprite2D3" type="Sprite2D" parent="Tutorial" index="1"]
-modulate = Color(1, 1, 1, 0.435294)
-material = SubResource("ShaderMaterial_smcgb")
-position = Vector2(363, 217)
-texture = ExtResource("8_77rqj")
+[node name="Label" type="Label" parent="Main/Control/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Gamus Namus"
+label_settings = SubResource("LabelSettings_mgnaa")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main" index="1"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -128.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="Main/HBoxContainer" index="0"]
+layout_mode = 2
+theme = ExtResource("6_03f4i")
+theme_override_font_sizes/font_size = 20
+text = "Made 
+during: "
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Main/HBoxContainer" index="1"]
+texture_filter = 2
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_sqs0p")
+expand_mode = 1
+stretch_mode = 5

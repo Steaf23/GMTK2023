@@ -5,7 +5,7 @@ extends Node
 @onready var LEVEL_SELECT: PackedScene = preload("res://Level Select/level_select.tscn")
 @onready var END_SCREEN: PackedScene = preload("res://Scenes/end_screen.tscn")
 # Change this when selecting a level from the menu 
-@onready var first_level: int = -1
+@onready var first_level: int = 0
 @onready var gui: GUI = $GUI
 
 var current_level: int
@@ -21,7 +21,7 @@ func has_level(level: int) -> bool:
 
 
 func switch(new_level: int) -> void:
-	gui.scene_counter.visible = new_level != -1
+	gui.scene_counter.visible = new_level != first_level
 	current_level = new_level
 	
 	for c in $Level.get_children():
@@ -29,7 +29,7 @@ func switch(new_level: int) -> void:
 	
 	var scn: Level
 	if current_level == -1:
-		scn = load("res://Levels/first_level.tscn").instantiate()
+		scn = load("res://Levels/level_0.tscn").instantiate()
 	else:
 		scn = load(level_pattern % new_level).instantiate()
 		
@@ -41,7 +41,10 @@ func switch(new_level: int) -> void:
 	
 
 
-func _on_level_won(level: int) -> void:
+func _on_level_won(turns: int, level: int) -> void:
+	print(level, current_level)
+	LevelProgress.set_progress(level, turns)
+	
 	gui.play_button.disabled = false
 	var new_level = level + 1
 	if has_level(new_level):
@@ -97,5 +100,5 @@ func _on_level_chosen(level: int) -> void:
 	gui.play_button.show()
 	gui.home_button.show()
 	gui.reset_button.show()
-	gui.scene_counter.visible = level != -1
+	gui.scene_counter.visible = level != first_level
 	switch(level)

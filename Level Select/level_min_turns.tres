@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MinimumTurns" load_steps=2 format=3 uid="uid://nc7qc3iw2s2"]
+
+[ext_resource type="Script" path="res://Level Select/min_turns.gd" id="1_ii1aj"]
+
+[resource]
+script = ExtResource("1_ii1aj")
+levels = [4, 1, 2]

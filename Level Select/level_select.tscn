@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcmrga8nmclxy"]
+[gd_scene load_steps=5 format=3 uid="uid://bcmrga8nmclxy"]
 
 [ext_resource type="Theme" uid="uid://dakh6hysbokff" path="res://Assets/Art/Theme.tres" id="1_acdmr"]
 [ext_resource type="Script" path="res://Level Select/level_select.gd" id="1_j6w1k"]
-[ext_resource type="PackedScene" uid="uid://bi1arjhkp7y4s" path="res://Level Select/level_button.tscn" id="3_gmcdo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yodi6"]
 font_size = 32
@@ -61,7 +60,4 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="Levels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="First Level" parent="MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/Levels" instance=ExtResource("3_gmcdo")]
 layout_mode = 2

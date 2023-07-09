@@ -26,6 +26,7 @@ buses/default_bus_layout="res://Resources/bus_layout.tres"
 KeyActions="*res://InputMapper/KeyActions.gd"
 SoundManager="*res://SoundManager/sound_manager.tscn"
 Cursor="*res://Scenes/cursor.tscn"
+LevelProgress="*res://Level Select/level_progress.gd"
 
 [display]
 

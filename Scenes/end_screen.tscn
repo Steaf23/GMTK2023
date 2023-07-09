@@ -12,7 +12,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="LabelSettings" id="LabelSettings_62yo2"]
-font_size = 64
+font_size = 48
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3

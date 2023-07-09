@@ -1,8 +1,25 @@
-[gd_scene format=3 uid="uid://bi1arjhkp7y4s"]
+[gd_scene load_steps=2 format=3 uid="uid://bi1arjhkp7y4s"]
 
-[node name="Level 0" type="Button"]
+[ext_resource type="Script" path="res://Level Select/level_button.gd" id="1_pukue"]
+
+[node name="Level 0" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pukue")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = " Level 0 "
 metadata/level = -1
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "0/0"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
